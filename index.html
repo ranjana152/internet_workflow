@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Internet workflow</title>
+</head>
+
+<body>
+    <h1 class="h1class">How does Internet work?</h1>
+
+    <body>
+        <h1 class="h1class">How does Internet work?</h1>
+        <button onclick="toggleFeatures()">Find Steps</button>
+        <div class="features" id="featureSection">
+            <div class="feature-grid">
+                <div class="feature-item" id="feature1">
+                    <h3 class="icon">1</h3>
+                    <p>
+                        Your computer first checks locally (browser cache, OS cache, hosts file).
+                        <button>DNS Resolver</button>
+                    </p>
+                </div>
+                <div class="feature-item" id="feature2">
+                    <h3 class="icon">2</h3>
+                    <p>Once the browser has the IP address, it sends an HTTP GET request to the server.
+                    </p>
+                </div>
+                <div class="feature-item" id="feature3">
+                    <h3 class="icon">3</h3>
+                    <p>Google has multiple servers worldwide to handle billions of requests. A load balancer helps
+                        distribute incoming traffic to different servers to ensure efficiency.
+                    </p>
+                </div>
+                <div class="feature-item" id="feature4">
+                    <h3 class="icon">4</h3>
+                    <p>After processing the request, Google’s server sends back an HTTP response with a status code
+                        of(200)</p>
+                    <button onclick="buttonClick()">Show result</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            function buttonClick() {
+                window.location.href = "https://www.google.com";
+            }
+            function toggleFeatures() {
+                let featureSection = document.getElementById("featureSection");
+                let button = document.querySelector(".findsteps");
+
+                if (featureSection.style.display === "none" || featureSection.style.display === "") {
+                    featureSection.style.display = "flex";
+                    button.textContent = "Hide Features";
+                } else {
+                    featureSection.style.display = "none";
+                    button.textContent = "Show Features";
+                }
+            }
+        </script>
+    </body>
+
+</html>
